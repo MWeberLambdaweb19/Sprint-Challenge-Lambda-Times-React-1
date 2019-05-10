@@ -29,9 +29,24 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
 ## Self-Study/Essay Questions
 
 - [ ] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
+
+PropTypes is is an extension to React that checks data against paramaters set within itself. It does this to make sure that the data being passed through matches the correct type that we tell PropTypes to check it against, be it a string, boolean, number, symbol, object or function. It's important to check our data in Javascript to make sure the correct data is rendering, and that we have the correct data passing through our props so that our components operate the way they were meant to operate.
+
 - [ ] Describe a life-cycle event in React?
+
+A life cycle event is analogous to the life cycle of a person - birth, growth, death. The Mounting Phase is where the component gets passed through the constructor down to the render method - this places the data on the screen. The render method, as it executes, runs through the updating phase. The end of the mounting phase ends as the render method is updating the DOM, citing componentDidMount. In the updating phase, any new props, changes to State (through setState), and re-renders the entire DOM with the updated data. This cites componentDidUpdate. Unmounting is the death phase, where the component is shutdown, nothing is rendered or updated, and componentWillUnmount is cited. 
+
 - [ ] Explain the details of a Higher Order Component?
+
+Thinking back to Higher Order Functions, Higher Order Components act as functions that receive components as arguments and returns a new component. When writing the HOC, the components received as arguments act as callbacks that will hold place for the components to be used when calling the HOC. The key to an HOC is reusability - if we write an HOC using logic that demands using several components the same way, but they cannot be all called together at the same time, we simply structure our code so that it can be reusuable with each pairing of components.
+
 - [ ] What are three different ways to style components in React? Explain some of the benefits of each.
+
+The first way to style components is through classNames, using CSS or a CSS preprocessor like Less or Sass. ClassNames behaves the same way as a class would in HTML/CSS, through we are using JSX so we must use the classNames syntax. As with CSS in any other project, this allows for simple organization of all styles in one or two files, depending on where each React component references its CSS. 
+
+The second way is to use Reactstrap/Bootstrap. The functionality of Reactstrap brings in Bootstrap styling to our React apps, making styling efficient, and being able to style an entire app in a matter of minutes with the right components in the right places. However, these styles are already set through Reactstrap, so editing colors and border-radius would take some extra time.
+
+The third way is to use the styled-components library. This allows us to create variables in each portion of our React app that are styled directly in the app itself (think inline styling for HTML elements). This is useful, as we can enter our React app, create a styled div variable, and use that same variable in the render method! The drawback is that the ability to edit the style of a certain element is in the file that it is rendered, so making sure each element does not clash with one another can be a chore. 
 
 ## Project Setup
 
